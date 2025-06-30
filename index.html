@@ -1,0 +1,814 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PODEN CELL - Kuota Murah, Cepat & Hemat!</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+            color: #333;
+            overflow-x: hidden;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        header {
+            background: rgba(44, 62, 80, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 20px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .logo-text {
+            color: #f4f1de;
+            font-size: 24px;
+            font-weight: bold;
+        }
+        
+        .tagline {
+            color: #D4AF37;
+            font-size: 12px;
+            margin-top: 2px;
+        }
+        
+        .whatsapp-btn {
+            background: #25D366;
+            color: white;
+            padding: 12px 24px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+        }
+        
+        .whatsapp-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+        }
+        
+        .hero {
+            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+            padding: 120px 0 80px;
+            text-align: center;
+            position: relative;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23D4AF37' fill-opacity='0.05'%3E%3Cpath d='M50 50c0-16.569 13.431-30 30-30s30 13.431 30 30-13.431 30-30 30-30-13.431-30-30zm0 0c0 16.569-13.431 30-30 30s-30-13.431-30-30 13.431-30 30-30 30 13.431 30 30z'/%3E%3C/g%3E%3C/svg%3E");
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .hero h1 {
+            color: #f4f1de;
+            font-size: 48px;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+        
+        .hero p {
+            color: #D4AF37;
+            font-size: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .delivery-info {
+            background: rgba(212, 175, 55, 0.1);
+            border: 2px solid #D4AF37;
+            border-radius: 15px;
+            padding: 20px;
+            margin: 30px 0;
+            text-align: center;
+        }
+        
+        .delivery-info h3 {
+            color: #D4AF37;
+            font-size: 22px;
+            margin-bottom: 10px;
+        }
+        
+        .delivery-info p {
+            color: #f4f1de;
+            font-size: 16px;
+        }
+        
+        .packages {
+            background: #f4f1de;
+            padding: 80px 0;
+            position: relative;
+        }
+        
+        .packages::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%232c3e50' fill-opacity='0.03'%3E%3Cpath d='M40 40c0-13.255 10.745-24 24-24s24 10.745 24 24-10.745 24-24 24-24-10.745-24-24zm0 0c0 13.255-10.745 24-24 24s-24-10.745-24-24 10.745-24 24-24 24 10.745 24 24z'/%3E%3C/g%3E%3C/svg%3E");
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .section-title h2 {
+            color: #2c3e50;
+            font-size: 36px;
+            margin-bottom: 10px;
+        }
+        
+        .section-title p {
+            color: #666;
+            font-size: 18px;
+        }
+        
+        .provider-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .provider-card {
+            background: white;
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            border: 3px solid transparent;
+        }
+        
+        .provider-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+            border-color: #D4AF37;
+        }
+        
+        .provider-header {
+            text-align: center;
+            margin-bottom: 25px;
+        }
+        
+        .provider-name {
+            background: linear-gradient(135deg, #2c3e50, #34495e);
+            color: white;
+            padding: 12px 24px;
+            border-radius: 25px;
+            font-size: 18px;
+            font-weight: bold;
+            display: inline-block;
+        }
+        
+        .package-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+            border-bottom: 1px solid #eee;
+            transition: all 0.3s ease;
+        }
+        
+        .package-item:last-child {
+            border-bottom: none;
+        }
+        
+        .package-item:hover {
+            background: rgba(212, 175, 55, 0.05);
+            padding-left: 10px;
+            margin: 0 -10px;
+            border-radius: 10px;
+        }
+        
+        .package-info {
+            flex: 1;
+        }
+        
+        .package-size {
+            color: #2c3e50;
+            font-weight: bold;
+            font-size: 16px;
+        }
+        
+        .package-duration {
+            color: #666;
+            font-size: 14px;
+        }
+        
+        .package-price {
+            color: #D4AF37;
+            font-weight: bold;
+            font-size: 18px;
+        }
+        
+        .promo-badge {
+            background: #e74c3c;
+            color: white;
+            padding: 4px 8px;
+            border-radius: 12px;
+            font-size: 10px;
+            margin-left: 8px;
+        }
+        
+        .order-btn {
+            background: #25D366;
+            color: white;
+            padding: 8px 16px;
+            border: none;
+            border-radius: 15px;
+            font-size: 12px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .order-btn:hover {
+            background: #1ea952;
+            transform: scale(1.05);
+        }
+        
+        .payment-methods {
+            background: #2c3e50;
+            padding: 80px 0;
+            position: relative;
+        }
+        
+        .payment-methods::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23D4AF37' fill-opacity='0.1'%3E%3Cpath d='M30 30c0-11.046 8.954-20 20-20s20 8.954 20 20-8.954 20-20 20-20-8.954-20-20zm0 0c0 11.046-8.954 20-20 20s-20-8.954-20-20 8.954-20 20-20 20 8.954 20 20z'/%3E%3C/g%3E%3C/svg%3E");
+        }
+        
+        .payment-content {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .payment-methods h2 {
+            color: #f4f1de;
+            text-align: center;
+            font-size: 36px;
+            margin-bottom: 50px;
+        }
+        
+        .payment-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+        
+        .payment-card {
+            background: rgba(244, 241, 222, 0.1);
+            backdrop-filter: blur(10px);
+            border: 2px solid #D4AF37;
+            border-radius: 20px;
+            padding: 30px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+        
+        .payment-card:hover {
+            transform: translateY(-5px);
+            border-color: #f4f1de;
+            background: rgba(244, 241, 222, 0.2);
+        }
+        
+        .payment-icon {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+        
+        .payment-card h3 {
+            color: #D4AF37;
+            font-size: 20px;
+            margin-bottom: 15px;
+        }
+        
+        .payment-card p {
+            color: #f4f1de;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+        
+        .ewallet-options {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 15px;
+        }
+        
+        .ewallet-btn {
+            background: #D4AF37;
+            color: #2c3e50;
+            padding: 8px 16px;
+            border-radius: 15px;
+            font-size: 12px;
+            font-weight: bold;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .ewallet-btn:hover {
+            background: #f4f1de;
+            transform: scale(1.05);
+        }
+        
+        footer {
+            background: #1a252f;
+            color: #f4f1de;
+            padding: 40px 0;
+            text-align: center;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+        
+        .footer-section h3 {
+            color: #D4AF37;
+            margin-bottom: 15px;
+        }
+        
+        .footer-section p, .footer-section a {
+            color: #f4f1de;
+            text-decoration: none;
+            line-height: 1.6;
+        }
+        
+        .footer-section a:hover {
+            color: #D4AF37;
+        }
+        
+        .copyright {
+            border-top: 1px solid #34495e;
+            padding-top: 20px;
+            color: #bbb;
+        }
+        
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 32px;
+            }
+            
+            .hero p {
+                font-size: 16px;
+            }
+            
+            .provider-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .header-content {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .logo-text {
+                font-size: 20px;
+            }
+        }
+        
+        .floating-whatsapp {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #25D366;
+            color: white;
+            padding: 15px;
+            border-radius: 50%;
+            font-size: 24px;
+            text-decoration: none;
+            box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+            z-index: 1000;
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+
+        .success-notification {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: #25D366;
+            color: white;
+            padding: 20px 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            z-index: 2000;
+            display: none;
+            text-align: center;
+            animation: slideIn 0.3s ease;
+        }
+
+        @keyframes slideIn {
+            from { opacity: 0; transform: translate(-50%, -50%) scale(0.8); }
+            to { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <div>
+                        <div class="logo-text">PODEN CELL</div>
+                        <div class="tagline">Cepat, Hemat & Anti Bikin Dompet Sekarat</div>
+                    </div>
+                </div>
+                <a href="https://wa.me/6283847427357" class="whatsapp-btn">💬 Chat WhatsApp</a>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>KUOTA MURAH & TERPERCAYA</h1>
+                <p>Melayani COD Keliling Setiap Hari Jam 5 Sore!</p>
+                
+                <div class="delivery-info">
+                    <h3>🏍️ LAYANAN COD DELIVERY</h3>
+                    <p>Pesan sekarang, bayar saat kuota sudah masuk! Kami keliling setiap hari jam 17:00 WIB</p>
+                </div>
+            </div>
+            
+        </div>
+    </section>
+
+            
+    <section class="packages">
+        <div class="container">
+            <div class="section-title">
+                <h2>PAKET KUOTA TERSEDIA</h2>
+                <p>Pilih paket yang sesuai kebutuhan Anda</p>
+            </div>
+            
+            <div class="provider-grid">
+                <!-- AXIS -->
+                <div class="provider-card">
+                    <div class="provider-header">
+                        <div class="provider-name">AXIS</div>
+                    </div>
+                    <div class="package-item">
+                        <div class="package-info">
+                            <div class="package-size">1GB</div>
+                            <div class="package-duration">1 hari</div>
+                        </div>
+                        <div class="package-price">Rp 7.000</div>
+                        <button class="order-btn" onclick="bukaForm('AXIS 1GB 1 hari - Rp 7.000')">Order</button>
+                    </div>
+                    <div class="package-item">
+                        <div class="package-info">
+                            <div class="package-size">1.5GB</div>
+                            <div class="package-duration">3 hari</div>
+                        </div>
+                        <div class="package-price">Rp 12.000</div>
+                        <button class="order-btn" onclick="bukaForm('AXIS 1.5GB 3 hari - Rp 12.000')">Order</button>
+                    </div>
+                    <div class="package-item">
+                        <div class="package-info">
+                            <div class="package-size">2GB</div>
+                            <div class="package-duration">30 hari</div>
+                        </div>
+                        <div class="package-price">Rp 17.000</div>
+                        <button class="order-btn" onclick="bukaForm('AXIS 2GB 30 hari - Rp 17.000')">Order</button>
+                    </div>
+                    <div class="package-item">
+                        <div class="package-info">
+                            <div class="package-size">5GB <span class="promo-badge">PROMO</span></div>
+                            <div class="package-duration">5 hari</div>
+                        </div>
+                        <div class="package-price">Rp 10.000</div>
+                        <button class="order-btn" onclick="bukaForm('AXIS 5GB 5 hari PROMO - Rp 10.000')">Order</button>
+                    </div>
+                </div>
+
+                <!-- INDOSAT -->
+                <div class="provider-card">
+                    <div class="provider-header">
+                        <div class="provider-name">INDOSAT</div>
+                    </div>
+                    <div class="package-item">
+                        <div class="package-info">
+                            <div class="package-size">1GB</div>
+                            <div class="package-duration">2 hari</div>
+                        </div>
+                        <div class="package-price">Rp 7.500</div>
+                        <button class="order-btn" onclick="bukaForm('INDOSAT 1GB 2 hari - Rp 7.500')">Order</button>
+                    </div>
+                    <div class="package-item">
+                        <div class="package-info">
+                            <div class="package-size">3GB</div>
+                            <div class="package-duration">1 hari</div>
+                        </div>
+                        <div class="package-price">Rp 9.000</div>
+                        <button class="order-btn" onclick="bukaForm('INDOSAT 3GB 1 hari - Rp 9.000')">Order</button>
+                    </div>
+                    <div class="package-item">
+                        <div class="package-info">
+                            <div class="package-size">3GB</div>
+                            <div class="package-duration">3 hari</div>
+                        </div>
+                        <div class="package-price">Rp 14.500</div>
+                        <button class="order-btn" onclick="bukaForm('INDOSAT 3GB 3 hari - Rp 14.500')">Order</button>
+                    </div>
+                    <div class="package-item">
+                        <div class="package-info">
+                            <div class="package-size">5GB <span class="promo-badge">PROMO</span></div>
+                            <div class="package-duration">2 hari</div>
+                        </div>
+                        <div class="package-price">Rp 10.000</div>
+                        <button class="order-btn" onclick="bukaForm('INDOSAT 5GB 2 hari PROMO - Rp 10.000')">Order</button>
+                    </div>
+                </div>
+
+                <!-- XL -->
+                <div class="provider-card">
+                    <div class="provider-header">
+                        <div class="provider-name">XL</div>
+                    </div>
+                    <div class="package-item">
+                        <div class="package-info">
+                            <div class="package-size">1.2GB</div>
+                            <div class="package-duration">3 hari</div>
+                        </div>
+                        <div class="package-price">Rp 8.000</div>
+                        <button class="order-btn" onclick="bukaForm('XL 1.2GB 3 hari - Rp 8.000')">Order</button>
+                    </div>
+                    <div class="package-item">
+                        <div class="package-info">
+                            <div class="package-size">1.6GB</div>
+                            <div class="package-duration">4 hari</div>
+                        </div>
+                        <div class="package-price">Rp 9.000</div>
+                        <button class="order-btn" onclick="bukaForm('XL 1.6GB 4 hari - Rp 9.000')">Order</button>
+                    </div>
+                    <div class="package-item">
+                        <div class="package-info">
+                            <div class="package-size">2GB</div>
+                            <div class="package-duration">5 hari</div>
+                        </div>
+                        <div class="package-price">Rp 11.500</div>
+                        <button class="order-btn" onclick="bukaForm('XL 2GB 5 hari - Rp 11.500')">Order</button>
+                    </div>
+                    <div class="package-item">
+                        <div class="package-info">
+                            <div class="package-size">3.6GB <span class="promo-badge">PROMO</span></div>
+                            <div class="package-duration">2 hari</div>
+                        </div>
+                        <div class="package-price">Rp 11.000</div>
+                        <button class="order-btn" onclick="bukaForm('XL 3.6GB 2 hari PROMO - Rp 11.000')">Order</button>
+                    </div>
+                </div>
+
+                <!-- TRI -->
+                <div class="provider-card">
+                    <div class="provider-header">
+                        <div class="provider-name">TRI</div>
+                    </div>
+                    <div class="package-item">
+                        <div class="package-info">
+                            <div class="package-size">1.5GB + 0.5GB lokal</div>
+                            <div class="package-duration">1 hari</div>
+                        </div>
+                        <div class="package-price">Rp 6.000</div>
+                        <button class="order-btn" onclick="bukaForm('TRI 1.5GB + 0.5GB lokal 1 hari - Rp 6.000')">Order</button>
+                    </div>
+                    <div class="package-item">
+                        <div class="package-info">
+                            <div class="package-size">2GB</div>
+                            <div class="package-duration">1 hari</div>
+                        </div>
+                        <div class="package-price">Rp 7.000</div>
+                        <button class="order-btn" onclick="bukaForm('TRI 2GB 1 hari - Rp 7.000')">Order</button>
+                    </div>
+                    <div class="package-item">
+                        <div class="package-info">
+                            <div class="package-size">2.5GB + 0.5GB lokal</div>
+                            <div class="package-duration">1 hari</div>
+                        </div>
+                        <div class="package-price">Rp 8.000</div>
+                        <button class="order-btn" onclick="bukaForm('TRI 2.5GB + 0.5GB lokal 1 hari - Rp 8.000')">Order</button>
+                    </div>
+                    <div class="package-item">
+                        <div class="package-info">
+                            <div class="package-size">5GB <span class="promo-badge">PROMO</span></div>
+                            <div class="package-duration">2 hari</div>
+                        </div>
+                        <div class="package-price">Rp 10.000</div>
+                        <button class="order-btn" onclick="bukaForm('TRI 5GB 2 hari PROMO - Rp 10.000')">Order</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+<div id="popupForm" style="display:none; position:fixed; top:50%; left:50%; transform:translate(-50%,-50%); background:#fff; padding:20px; border-radius:15px; z-index:9999; box-shadow:0 0 20px rgba(0,0,0,0.3);">
+  <h3>Masukkan Nama & Jadwal COD</h3>
+<input type="text" id="userName" placeholder="Nama Lengkap" style="width:100%; padding:10px; margin:10px 0;">
+<input type="text" id="jadwalCOD" placeholder="Misal: Hari ini jam 5 sore" style="width:100%; padding:10px; margin:10px 0;">
+
+  <input type="text" id="userNumber" placeholder="08xxxxxxxxxx" style="width:100%; padding:10px; margin:10px 0;">
+  <button id = "btnKirim" onclick = "submitOrder()" style="padding:10px 15px; background:#25D366; color:white; border:none; border-radius:8px;">✅ Kirim</button>
+  <div id="cooldownMessage" style="display:none; color:red; margin-top:10px;">
+  ⏳ Tunggu sebentar ya bro... Lagi ngirim order...
+</div>
+
+  <button onclick="tutupForm()" style="padding:10px 15px; margin-left:10px; background:#ccc; border:none; border-radius:8px;">❌ Batal</button>
+</div>
+
+
+
+
+
+    <section class="payment-methods">
+        <div class="container">
+            <div class="payment-content">
+                <h2>METODE PEMBAYARAN</h2>
+                <div class="payment-grid">
+                    <div class="payment-card">
+                        <div class="payment-icon">💰</div>
+                        <h3>Cash on Delivery (COD)</h3>
+                        <p>Bayar langsung saat kuota sudah masuk ke nomor Anda. Kami keliling setiap hari jam 5 sore!</p>
+                    </div>
+                    <div class="payment-card">
+                        <div class="payment-icon">💳</div>
+                        <h3>E-Wallet</h3>
+                        <p>Transfer mudah dan cepat melalui aplikasi favorit Anda</p>
+                        <div class="ewallet-options">
+                            <a href="#" class="ewallet-btn" onclick="bukaForm('Pembayaran via DANA')">DANA</a>
+                            <a href="#" class="ewallet-btn" onclick="bukaForm('Pembayaran via GoPay')">GoPay</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>PODEN CELL</h3>
+                    <p>Solusi kuota internet murah dan terpercaya dengan layanan COD yang aman dan nyaman.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Layanan Kami</h3>
+                    <p>• COD Delivery Jam 5 Sore<br>
+                    • Transfer E-Wallet<br>
+                    • Customer Service 24/7<br>
+                    • Garansi Kuota Masuk</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Hubungi Kami</h3>
+                    <p>WhatsApp: <a href="https://wa.me/6283847427357">083847427357</a><br>
+                    Instagram: <a href="https://instagram.com/poden_cell">@poden_cell</a><br>
+                    Jam Operasional: 07:30 - 18:30 WIB</p>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2024 PODEN CELL. All rights reserved. | Cepat, Hemat & Anti Bikin Dompet Sekarat</p>
+            </div>
+        </div>
+    </footer>
+
+    <a href="https://wa.me/6283847427357" class="floating-whatsapp">💬</a>
+<script>
+let paketDipilih = "Paket 5GB Indosat"; // Atau bisa dari tombol luar
+let isCooldown = false;
+
+const scriptURL = "https://script.google.com/macros/s/AKfycbx1dVQx3rXJ5O9GK6mMzyORhjUHEtzFubSMhwb2TkLJFpTO3XbqBXAm4YxhBy-6GRBx/exec";
+
+function bukaForm(namaPaket) {
+  paketDipilih = namaPaket;
+  document.getElementById("popupForm").style.display = "block";
+}
+
+function tutupForm() {
+  document.getElementById("popupForm").style.display = "none";
+}
+
+function resetCooldown() {
+  isCooldown = false;
+  document.getElementById("btnKirim").disabled = false;
+  document.getElementById("cooldownMessage").style.display = "none";
+}
+
+async function submitOrder() {
+  if (isCooldown) {
+    alert("⏳ Sabar bro, tunggu cooldown selesai dulu ya...");
+    return;
+  }
+
+  // Mulai cooldown langsung
+  isCooldown = true;
+  document.getElementById("btnKirim").disabled = true;
+  document.getElementById("cooldownMessage").style.display = "block";
+
+  const nama = document.getElementById("userName").value;
+  const nomor = document.getElementById("userNumber").value;
+  const jadwal = document.getElementById("jadwalCOD").value;
+
+  // VALIDASI
+  if (!/^08[0-9]{8,13}$/.test(nomor)) {
+    alert("❌ Nomor gak valid bro!");
+    resetCooldown(); return;
+  }
+
+  if (nama.trim().length < 3 || !/^[a-zA-Z\s]+$/.test(nama.trim())) {
+    alert("❌ Nama minimal 3 huruf dan tanpa angka/simbol!");
+    resetCooldown(); return;
+  }
+
+  if (jadwal.trim().length < 5 || /^[\d\s\-_.]+$/.test(jadwal.trim())) {
+    alert("❌ Jadwal COD harus jelas bro!");
+    resetCooldown(); return;
+  }
+
+  const data = {
+    nama: nama,
+    nomor: nomor,
+    jadwalCOD: jadwal,
+    paket: paketDipilih
+  };
+
+  try {
+    const res = await fetch(scriptURL, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(data)
+    });
+
+    const result = await res.json();
+
+    if (result.status === "success") {
+      alert("✅ Order berhasil dikirim!");
+      tutupForm();
+      // Jangan resetCooldown langsung, tunggu delay selesai
+    } else {
+      alert("⚠️ Order gagal dikirim. Coba lagi.");
+      resetCooldown();
+    }
+  } catch (err) {
+    console.error("Fetch error:", err);
+    alert("❌ Gagal koneksi ke server.");
+    resetCooldown();
+  }
+
+  // COOLDOWN 30 DETIK
+  setTimeout(() => resetCooldown(), 30000);
+}
+</script>
